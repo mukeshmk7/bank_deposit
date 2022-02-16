@@ -3,7 +3,7 @@ from joblib import load
 import warnings
 warnings.filterwarnings('ignore')
 
-model = load(r'C:\Users\mukesh\Desktop\machine learning\projects\Employee_attrition\model.pkl')
+model = load('model.pkl')
 app = Flask(__name__)
 
 @app.route("/")
@@ -33,4 +33,4 @@ def predict():
         return render_template('predict.html', output="Customer will deposit")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
